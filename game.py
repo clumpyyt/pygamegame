@@ -1,3 +1,4 @@
+#Modules
 import pygame
 import sys
 
@@ -59,10 +60,8 @@ menuBg = pygame.image.load("menuScreen.png")
 
 #Game Loop
 while GameIsRunning:
-    
-    speedTextVariable = ("Speed:" + str(speed))
-    
     #Loopable Menu Text
+    speedTextVariable = ("Speed:" + str(speed))
     quitGameText = MainMenuFont.render(RedButton, False, "black")
     settingsGameText = MainMenuFont.render(YellowButton, False, "black")
     playGameText = MainMenuFont.render(GreenButton, False, "black")
@@ -98,7 +97,7 @@ while GameIsRunning:
                 playButtonTextPosition = (280, 375)
                 settingsButtonTextPosition = (255, 675)
                 quitButtonTextPosition = (340, 975)
-                speed+=1
+                speed+=0.5
             if playButtonGeometry.collidepoint(MousePosition):
                 SettingsAreOpen = False
                 GameIsOpen = True
@@ -153,6 +152,10 @@ while GameIsRunning:
         screen.blit(speedText, speedTextPosition)
     else:
         screen.blit(speedText, offScreen)
+    if GameIsOpen == True:
+        pass
+    else:
+        pass
     pygame.display.flip()
     clock.tick(60)
 
